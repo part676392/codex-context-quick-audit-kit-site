@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://part676392.github.io/codex-context-quick-audit-kit-site/sitemap.xml
+
