@@ -1,0 +1,31 @@
+name: Request USD 5 checkout
+description: Request a checkout link for the Codex Context Quick Audit Kit.
+title: "Checkout request: Codex Context Quick Audit Kit"
+labels:
+  - buyer-lead
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this public issue only to request a checkout link for the USD 5 kit.
+
+        Do not post secrets, private repository URLs, credentials, email addresses, or paid customer data here.
+  - type: dropdown
+    id: buyer-type
+    attributes:
+      label: Buyer type
+      options:
+        - Maintainer testing Codex on a repository
+        - AI workflow builder
+        - Team evaluating AGENTS.md workflows
+        - Other
+    validations:
+      required: true
+  - type: checkboxes
+    id: acknowledgement
+    attributes:
+      label: Acknowledgement
+      options:
+        - label: I understand this issue is public and I will not post secrets or private account data.
+          required: true
+

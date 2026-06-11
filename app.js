@@ -1,5 +1,6 @@
 (function () {
   const checkoutUrl = window.CODEX_AUDIT_KIT_CHECKOUT_URL || "";
+  const issueUrl = window.CODEX_AUDIT_KIT_ISSUE_URL || "";
   const fallbackUrl = window.CODEX_AUDIT_KIT_FALLBACK_URL || "";
   const buttons = [
     document.getElementById("buyButton"),
@@ -8,6 +9,24 @@
   const note = document.getElementById("checkoutNote");
 
   if (!checkoutUrl) {
+    if (issueUrl) {
+      buttons.forEach((button) => {
+        button.href = issueUrl;
+        button.textContent = "Request $5 checkout";
+        button.setAttribute("target", "_blank");
+        button.setAttribute("rel", "noopener noreferrer");
+      });
+      if (note) {
+        const emailText = fallbackUrl
+          ? " Email fallback is available through the project author address."
+          : "";
+        note.textContent =
+          "Automated checkout is not configured yet. Request a checkout link through the public GitHub issue form; do not post secrets there." +
+          emailText;
+      }
+      return;
+    }
+
     if (fallbackUrl) {
       buttons.forEach((button) => {
         button.href = fallbackUrl;
