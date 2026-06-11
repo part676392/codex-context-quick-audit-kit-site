@@ -24,6 +24,7 @@
       </a>
       <nav aria-label="Primary navigation">
         <a href="#contents">Contents</a>
+        <a href="#sample">Sample</a>
         <a href="#workflow">Workflow</a>
         <a href="#buy">Buy</a>
       </nav>
@@ -76,20 +77,49 @@
         <ul class="deliverables">
           <li>
             <span>01</span>
+            <strong>Local audit runner</strong>
+            <p>Installs the OSS probe, runs Markdown/SARIF/JSON reports, and keeps output in one folder.</p>
+          </li>
+          <li>
+            <span>02</span>
             <strong>GitHub Actions workflow</strong>
             <p>Runs the preflight before Codex-assisted review or release work.</p>
           </li>
           <li>
-            <span>02</span>
+            <span>03</span>
             <strong>Path-scoped contract</strong>
             <p>Starts with payments, web, and release paths so teams can adapt quickly.</p>
           </li>
           <li>
-            <span>03</span>
+            <span>04</span>
             <strong>Setup and recovery notes</strong>
             <p>Clear steps for install, first run, common warnings, and next actions.</p>
           </li>
         </ul>
+      </section>
+
+      <section class="sample" id="sample" aria-labelledby="sample-title">
+        <div>
+          <p class="eyebrow">Free sample</p>
+          <h2 id="sample-title">The report tells you which instructions Codex can actually see.</h2>
+          <p>
+            Buyers get the runner, templates, starter contracts, and troubleshooting notes. This sample shows the reading pattern.
+          </p>
+        </div>
+        <pre aria-label="Sample report"><code>Changed paths: 3
+Findings: 0 errors, 2 warnings
+
+services/payments/handler.py
+  visible: AGENTS.md, services/payments/AGENTS.md
+  status: good
+
+apps/web/page.tsx
+  visible: AGENTS.md, apps/web/AGENTS.override.md
+  status: review override inheritance
+
+.github/workflows/release.yml
+  visible: AGENTS.md
+  status: add release-specific instruction file</code></pre>
       </section>
 
       <section class="workflow" id="workflow" aria-labelledby="workflow-title">

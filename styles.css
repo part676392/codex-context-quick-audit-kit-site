@@ -44,7 +44,7 @@ a {
 nav {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
   font-size: 13px;
   font-weight: 700;
   text-decoration: none;
@@ -239,6 +239,7 @@ h2 {
 
 .proof,
 .contents,
+.sample,
 .workflow,
 .buy {
   padding: clamp(72px, 10vw, 140px) clamp(20px, 5vw, 72px);
@@ -260,6 +261,35 @@ h2 {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
   gap: clamp(36px, 6vw, 96px);
+}
+
+.sample {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.15fr);
+  gap: clamp(32px, 5vw, 78px);
+  align-items: start;
+  background: #fffaf0;
+}
+
+.sample p {
+  max-width: 620px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.sample pre {
+  overflow-x: auto;
+  margin: 0;
+  padding: clamp(20px, 3vw, 34px);
+  color: #d5f7e9;
+  background: #111318;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 .deliverables {
@@ -373,6 +403,7 @@ h2 {
 
   .hero,
   .contents,
+  .sample,
   .buy {
     grid-template-columns: 1fr;
   }
